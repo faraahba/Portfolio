@@ -1,413 +1,339 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - BABA FARAH | Étudiante en Master d'Excellence</title>
-    <meta name="description" content="Portfolio de BABA FARAH - Étudiante en Master d'Excellence. Informatique et Systèmes Embarqués.">
-    <meta property="og:title" content="Portfolio - BABA FARAH | Étudiante en Master d'Excellence">
-    <meta property="og:description" content="Portfolio de BABA FARAH - Étudiante en Master d'Excellence. Passionnée par l'innovation technologique.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://faraahba.github.io/Portfolio">
-    <link rel="stylesheet" href="Portfolio.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script defer src="Portfolio.js"></script>
+    <title>Farah BABA | Software & Embedded Systems Engineer</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.8rem;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .company {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #0284c722;
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #0284c744;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .skill-box h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #090d16;
+            color: var(--text-muted);
+            border-top: 1px solid #1e293b;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="logo">BABA FARAH</div>
-            <button class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#experience">Expérience</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-image-container">
-                <img src="Picture.jpeg" alt="Photo de profil de BABA FARAH" class="profile-circle">
-            </div>
-            <h1 class="fade-in">BABA FARAH</h1>
-            <p class="subtitle fade-in">Étudiante en Master d'Excellence</p>
-            <p class="description fade-in">Passionnée par l'Innovation Technologique</p>
-            <div class="social-links fade-in">
-                <a href="mailto:Farah.baba01@gmail.com" class="social-icon" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/farah-baba-367b7b30b/" target="_blank" class="social-icon" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="tel:+212601461156" class="social-icon" title="Téléphone">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
-            <a href="#about" class="cta-button">Découvrir Mon Parcours</a>
+    <header>
+        <h1>Hi, I'm <span>Farah BABA</span></h1>
+        <p class="subtitle">Software & Embedded Systems Engineer | Full Stack Developer | IoT Enthusiast</p>
+        <p style="color: var(--text-muted); max-width: 650px; margin-bottom: 2rem;">
+            Master’s graduate in Computer Engineering & Embedded Systems. Passionate about software engineering, IoT architectures, image processing, and smart automated solutions.
+        </p>
+        <div class="btn-group">
+            <a href="mailto:farah.baba01@gmail.com" class="btn btn-primary">Contact Me</a>
+            <a href="https://www.linkedin.com/in/farah-baba-367b7b30b/" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
         </div>
     </header>
 
-    <!-- À propos de moi -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Je suis une étudiante passionnée par les <strong>systèmes intelligents</strong> et les <strong>technologies émergentes</strong>. Actuellement en dernière année du Master d'Excellence à l'Université Ibn Zohr, je combine expertise technique et curiosité pour créer des solutions innovantes.</p>
-                    <p>Mon parcours me permet de maîtriser des domaines variés : du développement web avec Laravel à la conception de systèmes embarqués, en passant par le Big Data avec Hadoop et Spark.</p>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <i class="fas fa-location-dot"></i>
-                            <span>Agadir, Maroc</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Master en cours</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>4+ Expériences</span>
-                        </div>
-                    </div>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Master of Excellence in Computer Engineering & Embedded Systems</h3>
+                <p class="company">Ibn Zohr University - FSA, Agadir (2024 - 2026)</p>
+                <p>Advanced studies in IoT, embedded systems, software architecture, computer vision, and machine learning.</p>
+            </div>
+            <div class="card">
+                <h3>Bachelor of Excellence in Computer Engineering & Embedded Systems</h3>
+                <p class="company">Ibn Zohr University - FSA, Agadir (2023 - 2024)</p>
+                <p>Core engineering fundamentals in software development, microcontrollers, and hardware-software integration.</p>
+            </div>
+            <div class="card">
+                <h3>Bachelor in Education - Computer Science</h3>
+                <p class="company">Higher School of Education and Training, Agadir (2020 - 2023)</p>
+                <p>Foundations in computer science, software logic, and pedagogy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Final-Year Internship (PFE)</h3>
+                <p class="company">OCP Jorf Lasfar (Feb 2026 - Jun 2026)</p>
+                <p>Designed and developed an automated embedded system for industrial physical data acquisition and processing (Density measurement of industrial fluids using computer vision, OCR, ESP32, Python/Flask, OpenCV, and MySQL).</p>
+                <div class="tag-container">
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Python / Flask</span>
+                    <span class="tag">OpenCV / EasyOCR</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">IoT</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Developer Intern</h3>
+                <p class="company">MARSA MAROC, Agadir (Aug 2025 - Sep 2025)</p>
+                <p>Development of an SQL query management application to streamline internal operations and database reporting.</p>
+                <div class="tag-container">
+                    <span class="tag">PHP / Laravel</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Web Development</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Developer Intern</h3>
+                <p class="company">National Ports Agency, Agadir (Jul 2024)</p>
+                <p>Development of an IT asset management application for infrastructure tracking.</p>
+                <div class="tag-container">
+                    <span class="tag">PHP / Laravel</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">IT Asset Management</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Formation -->
-    <section id="formation" class="section light-bg">
-        <div class="container">
-            <h2 class="section-title">Formation</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Master d'Excellence - Informatique et Systèmes Embarqués</h3>
-                        <p class="institution">Université Ibn Zohr - FSA, Agadir</p>
-                        <p class="date">2024 - 2026 (en cours)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Licence d'Excellence - Informatique et Systèmes Embarqués</h3>
-                        <p class="institution">Université Ibn Zohr - FSA, Agadir</p>
-                        <p class="date">2023 - 2024</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Licence d'Éducation - Informatique</h3>
-                        <p class="institution">École Supérieure de l'Éducation et de la Formation, Agadir</p>
-                        <p class="date">2020 - 2023</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Diplôme de langue russe</h3>
-                        <p class="institution">Institut Régional d'Administration Publique de Kharkiv, Ukraine</p>
-                        <p class="date">2020</p>
-                    </div>
-                </div>
+    <section id="projects">
+        <h2 class="section-title">Key Projects & Hackathons</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Automated Fluid Density Measurement System</h3>
+                <p class="company">Final Master Project (OCP Jorf Lasfar)</p>
+                <p>Integrated ESP32 microcontrollers, Raspberry Pi, Python/Flask web dashboard, and OpenCV image processing to automatically calculate fluid density via meniscus position detection.</p>
+            </div>
+            <div class="card">
+                <h3>Health Tech Hackathon - Cardio Anomaly Monitor</h3>
+                <p class="company">Connected Bracelet Project</p>
+                <p>Designed a connected bracelet for real-time monitoring of cardio-motor anomalies using IoT devices, Machine Learning, and cloud connectivity.</p>
+            </div>
+            <div class="card">
+                <h3>Technovate Hackathon - Plant Disease Detection</h3>
+                <p class="company">FSA IT Excellence Center</p>
+                <p>Built an intelligent web dashboard (React) connected to an IoT vision setup for automated plant disease detection using Machine Learning models.</p>
+            </div>
+            <div class="card">
+                <h3>Autonomous Patrol Robot</h3>
+                <p class="company">Embedded Systems Project</p>
+                <p>Surveillance robot capable of autonomous patrolling using motion sensors and live camera feed tracking.</p>
             </div>
         </div>
     </section>
 
-    <!-- Expérience Professionnelle -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Expérience Professionnelle</h2>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Stage PFE - OCP Jorf Lasfar</h3>
-                        <span class="badge">En cours</span>
-                    </div>
-                    <p class="experience-description">Conception et réalisation d'un système embarqué automatisé d'acquisition et de traitement de données physiques.</p>
-                    <div class="experience-tags">
-                        <span class="tag">Systèmes Embarqués</span>
-                        <span class="tag">Acquisition Données</span>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Développeuse PHP/Laravel - MARSA MAROC</h3>
-                        <span class="date-badge">Août-Sept. 2025</span>
-                    </div>
-                    <p class="experience-description">Développement d'une application de gestion des requêtes SQL.</p>
-                    <div class="experience-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">Laravel</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Développeuse PHP/Laravel - Agence Nationale des Ports</h3>
-                        <span class="date-badge">Juil. 2024</span>
-                    </div>
-                    <p class="experience-description">Développement d'une application de gestion de parc informatique.</p>
-                    <div class="experience-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">Laravel</span>
-                        <span class="tag">Base de données</span>
-                    </div>
-                </div>
-
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <h3>Projet de fin d'études</h3>
-                        <span class="date-badge">Jan-Fév. 2023</span>
-                    </div>
-                    <p class="experience-description">Développement d'une application de gestion de bibliothèque (Java/JEE, SQL).</p>
-                    <div class="experience-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">JEE</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                </div>
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <h4>Software & Web</h4>
+                <ul>
+                    <li>PHP (Laravel - MVC)</li>
+                    <li>Python (Flask)</li>
+                    <li>Java / JEE</li>
+                    <li>HTML5 / CSS3 / JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <h4>Embedded Systems & IoT</h4>
+                <ul>
+                    <li>ESP32 / ESP32-CAM</li>
+                    <li>Raspberry Pi</li>
+                    <li>C / VHDL</li>
+                    <li>Modbus TCP / HTTP / MQTT</li>
+                    <li>Sensors & Relay Actuators</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <h4>Databases & Vision</h4>
+                <ul>
+                    <li>SQL / MySQL / MongoDB</li>
+                    <li>OpenCV / EasyOCR</li>
+                    <li>UML / Merise</li>
+                    <li>Git / Postman</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Projets -->
-    <section id="projects" class="section light-bg">
-        <div class="container">
-            <h2 class="section-title">Mini Projets & Hackathons</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Hackathon HealthTech - FSA</h3>
-                    <p class="project-subtitle">Surveillance contextuelle de l'anomalie cardio-motrice</p>
-                    <p>Conception d'un bracelet connecté intégrant IoT, machine learning et cloud computing.</p>
-                    <div class="project-tags">
-                        <span class="tag">IoT</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Cloud</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Hackathon Technovate - FSA</h3>
-                    <p class="project-subtitle">Détection des maladies des plantes</p>
-                    <p>Application intégrant React, machine learning et IoT pour la détection automatique des maladies.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">ML</span>
-                        <span class="tag">IoT</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Robot de Surveillance</h3>
-                    <p class="project-subtitle">Système autonome de patrouille</p>
-                    <p>Robot capable de patrouiller et surveiller une zone avec capteurs de mouvement et caméra intégrée.</p>
-                    <div class="project-tags">
-                        <span class="tag">Robotique</span>
-                        <span class="tag">Capteurs</span>
-                        <span class="tag">Systèmes Embarqués</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Compétences Techniques</h2>
-            
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programmation Web</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">HTML5</span>
-                        <span class="skill-badge">CSS</span>
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">Laravel</span>
-                        <span class="skill-badge">Java/JEE</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">WordPress</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Bases de Données</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">MySQL</span>
-                        <span class="skill-badge">SQL Server</span>
-                        <span class="skill-badge">MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Big Data & ETL</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">Talend</span>
-                        <span class="skill-badge">Hadoop</span>
-                        <span class="skill-badge">Spark</span>
-                        <span class="skill-badge">SSIS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Langages de Programmation</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">C</span>
-                        <span class="skill-badge">VHDL</span>
-                        <span class="skill-badge">Java</span>
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Outils & Plateformes</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">GitHub</span>
-                        <span class="skill-badge">Postman</span>
-                        <span class="skill-badge">Microsoft Office</span>
-                        <span class="skill-badge">Linux</span>
-                        <span class="skill-badge">Windows</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Modélisation & Simulation</h3>
-                    <div class="skills-list">
-                        <span class="skill-badge">UML</span>
-                        <span class="skill-badge">Merise</span>
-                        <span class="skill-badge">MATLAB</span>
-                        <span class="skill-badge">Quartus</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="qualities-section">
-                <h3>Qualités Personnelles</h3>
-                <div class="qualities-grid">
-                    <div class="quality-card">
-                        <i class="fas fa-brain"></i>
-                        <span>Polydisciplinaire</span>
-                    </div>
-                    <div class="quality-card">
-                        <i class="fas fa-person"></i>
-                        <span>Autonome</span>
-                    </div>
-                    <div class="quality-card">
-                        <i class="fas fa-users"></i>
-                        <span>Esprit d'équipe</span>
-                    </div>
-                    <div class="quality-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Sens de l'initiative</span>
-                    </div>
-                    <div class="quality-card">
-                        <i class="fas fa-shield"></i>
-                        <span>Responsabilité</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Langues -->
-    <section id="languages" class="section light-bg">
-        <div class="container">
-            <h2 class="section-title">Langues</h2>
-            <div class="languages-grid">
-                <div class="language-card">
-                    <h3>Arabe</h3>
-                    <p class="proficiency">Langue maternelle</p>
-                    <div class="proficiency-bar">
-                        <div class="proficiency-fill" style="width: 100%"></div>
-                    </div>
-                </div>
-                <div class="language-card">
-                    <h3>Français</h3>
-                    <p class="proficiency">Courant</p>
-                    <div class="proficiency-bar">
-                        <div class="proficiency-fill" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="language-card">
-                    <h3>Anglais</h3>
-                    <p class="proficiency">Moyen</p>
-                    <div class="proficiency-bar">
-                        <div class="proficiency-fill" style="width: 65%"></div>
-                    </div>
-                </div>
-                <div class="language-card">
-                    <h3>Russe</h3>
-                    <p class="proficiency">Débutante</p>
-                    <div class="proficiency-bar">
-                        <div class="proficiency-fill" style="width: 35%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Restons en Contact</h2>
-            <div class="contact-content">
-                <p class="contact-description">Je suis toujours intéressée par les opportunités de collaboration et les projets innovants.</p>
-                <div class="contact-grid">
-                    <a href="mailto:Farah.baba01@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>Farah.baba01@gmail.com</p>
-                    </a>
-                    <a href="tel:+212601461156" class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Téléphone</h3>
-                        <p>+212 601 461 156</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/farah-baba-367b7b30b/" target="_blank" class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <h3>LinkedIn</h3>
-                        <p>Baba Farah</p>
-                    </a>
-                    <div class="contact-card">
-                        <i class="fas fa-location-dot"></i>
-                        <h3>Localisation</h3>
-                        <p>Agadir, Maroc</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Baba Farah. Tous droits réservés.</p>
-            <p class="footer-subtitle">Conçu avec ❤️ et innovation</p>
-        </div>
+    <footer>
+        <p>&copy; 2026 Farah BABA. All rights reserved.</p>
+        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Agadir, Morocco | farah.baba01@gmail.com</p>
     </footer>
 
 </body>

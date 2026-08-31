@@ -212,10 +212,11 @@ body {
     gap: 18px;
     order: 2;
     justify-self: end;
+    width: min(100%, 320px);
 }
 
 .hero-image-frame {
-    padding: 16px;
+    padding: 12px;
     background: rgba(15, 23, 42, 0.58);
     border: 1px solid rgba(147, 197, 253, 0.18);
     border-radius: 32px;
@@ -226,7 +227,7 @@ body {
 .hero-image {
     width: 100%;
     display: block;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     border-radius: 22px;
 }
@@ -1052,6 +1053,12 @@ body {
 
     .hero-image {
         aspect-ratio: 16 / 10;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 520px;
+        justify-self: start;
     }
 }
 

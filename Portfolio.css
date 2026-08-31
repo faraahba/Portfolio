@@ -212,11 +212,11 @@ body {
     gap: 18px;
     order: 2;
     justify-self: end;
-    width: min(100%, 320px);
+    width: min(100%, 200px);
 }
 
 .hero-image-frame {
-    padding: 12px;
+    padding: 8px;
     background: rgba(15, 23, 42, 0.58);
     border: 1px solid rgba(147, 197, 253, 0.18);
     border-radius: 32px;
@@ -230,6 +230,7 @@ body {
     aspect-ratio: 3 / 4;
     object-fit: cover;
     border-radius: 22px;
+    object-position: center 22%;
 }
 
 @keyframes slideDown {
@@ -1057,7 +1058,7 @@ body {
 
     .hero-visual {
         width: 100%;
-        max-width: 520px;
+        max-width: 280px;
         justify-self: start;
     }
 }

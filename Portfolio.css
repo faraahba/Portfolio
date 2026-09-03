@@ -120,9 +120,9 @@ body {
         radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.09), transparent 26%),
         linear-gradient(135deg, #ffffff 0%, #f8fbff 52%, #eaf2ff 100%);
     color: var(--text-color);
-    padding: 110px 20px 90px;
+    padding: 80px 20px 70px;
     text-align: center;
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,39 +133,6 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05), transparent 55%);
-    opacity: 1;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: auto -10% -35% auto;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.08);
-    filter: blur(12px);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-    gap: clamp(32px, 6vw, 72px);
-    align-items: center;
-    text-align: left;
-}
-
-.hero-copy {
-    order: 1;
 }
 
 .hero-copy {

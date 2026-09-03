@@ -173,6 +173,20 @@ body {
     max-width: 560px;
 }
 
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    color: var(--primary-dark);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
 .hero-visual {
     display: flex;
     flex-direction: column;
